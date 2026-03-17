@@ -1,6 +1,6 @@
 Anastasis Vlachatsis — Portfolio
 Personal developer portfolio built with vanilla HTML, CSS, and JavaScript. No frameworks, no dependencies — just a single file you can open in any browser or deploy anywhere in seconds.
-Live Demo → (replace with your Vercel/GitHub Pages URL)
+Live Demo →  http://anastasisvl.github.io/Landing_Page/
 
 Features
 
