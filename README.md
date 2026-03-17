@@ -25,15 +25,9 @@ CSS custom properties for theming
 Vanilla JS for typing effect, scroll observer, and nav state
 
 
-Getting Started
-bashgit clone https://github.com/AnastasisVL/portfolio.git
-cd portfolio
-open index.html
-That's it. No install, no build.
+
 
 Deployment
-Vercel
-bashnpx vercel
 GitHub Pages
 
 Push to a repo named AnastasisVL.github.io
