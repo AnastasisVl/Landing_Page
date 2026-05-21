@@ -32,6 +32,9 @@
         --text: #e6edf3;
         --text-muted: #7d8590;
         --text-faint: #3d444d;
+        --terminal-red: #ff5f57;
+        --terminal-yellow: #ffbd2e;
+        --terminal-green: #28c941;
         --font-display: "Syne", sans-serif;
         --font-body: "DM Sans", sans-serif;
         --font-mono: "DM Mono", monospace;
@@ -396,13 +399,13 @@
         border-radius: 50%;
       }
       .dot-r {
-        background: #ff5f57;
+        background: var(--terminal-red);
       }
       .dot-y {
-        background: #ffbd2e;
+        background: var(--terminal-yellow);
       }
       .dot-g {
-        background: #28c941;
+        background: var(--terminal-green);
       }
       .terminal-title {
         font-family: var(--font-mono);
@@ -731,6 +734,9 @@
         height: 6px;
         border-radius: 50%;
       }
+      .pm-dot-r { background: var(--terminal-red); }
+      .pm-dot-y { background: var(--terminal-yellow); }
+      .pm-dot-g { background: var(--terminal-green); }
       .pm-body {
         background: rgba(255, 255, 255, 0.03);
         border-radius: 0 0 4px 4px;
@@ -1044,6 +1050,13 @@
     <div class="grid-bg"></div>
     <div class="glow-blob glow-blob-1"></div>
     <div class="glow-blob glow-blob-2"></div>
+
+    <!-- SVG Symbols -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="icon-github" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+      </symbol>
+    </svg>
 
     <!-- NAV -->
     <nav>
@@ -1370,9 +1383,9 @@
             <div class="project-preview project-preview-barber">
               <div class="preview-mockup">
                 <div class="pm-bar">
-                  <div class="pm-dot" style="background: #ff5f57"></div>
-                  <div class="pm-dot" style="background: #ffbd2e"></div>
-                  <div class="pm-dot" style="background: #28c941"></div>
+                  <div class="pm-dot pm-dot-r"></div>
+                  <div class="pm-dot pm-dot-y"></div>
+                  <div class="pm-dot pm-dot-g"></div>
                   <span
                     style="
                       font-size: 0.6rem;
@@ -1478,9 +1491,9 @@
             <div class="project-preview project-preview-noted">
               <div class="preview-mockup">
                 <div class="pm-bar">
-                  <div class="pm-dot" style="background: #ff5f57"></div>
-                  <div class="pm-dot" style="background: #ffbd2e"></div>
-                  <div class="pm-dot" style="background: #28c941"></div>
+                  <div class="pm-dot pm-dot-r"></div>
+                  <div class="pm-dot pm-dot-y"></div>
+                  <div class="pm-dot pm-dot-g"></div>
                   <span
                     style="
                       font-size: 0.6rem;
@@ -1567,9 +1580,9 @@
             <div class="project-preview project-preview-wp">
               <div class="preview-mockup">
                 <div class="pm-bar">
-                  <div class="pm-dot" style="background: #ff5f57"></div>
-                  <div class="pm-dot" style="background: #ffbd2e"></div>
-                  <div class="pm-dot" style="background: #28c941"></div>
+                  <div class="pm-dot pm-dot-r"></div>
+                  <div class="pm-dot pm-dot-y"></div>
+                  <div class="pm-dot pm-dot-g"></div>
                   <span
                     style="
                       font-size: 0.6rem;
@@ -1668,9 +1681,9 @@
             <div class="project-preview project-preview-react">
               <div class="preview-mockup">
                 <div class="pm-bar">
-                  <div class="pm-dot" style="background: #ff5f57"></div>
-                  <div class="pm-dot" style="background: #ffbd2e"></div>
-                  <div class="pm-dot" style="background: #28c941"></div>
+                  <div class="pm-dot pm-dot-r"></div>
+                  <div class="pm-dot pm-dot-y"></div>
+                  <div class="pm-dot pm-dot-g"></div>
                   <span
                     style="
                       font-size: 0.6rem;
@@ -1827,10 +1840,7 @@
               </span>
               github.com/AnastasisVL
             </a>
-            <a href="tel:6942020704" class="contact-link">
-              <span class="cl-icon">📱</span>
-              694-202-0704
-            </a>
+          
           </div>
         </div>
 
