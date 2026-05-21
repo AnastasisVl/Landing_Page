@@ -907,7 +907,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <a href="#contact" class="nav-cta">Let's Talk</a>
-      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </div>
     </nav>
@@ -1163,43 +1163,7 @@
             </div>
           </div>
 
-          <!-- React Apps -->
-          <div class="project-card animate delay-4">
-            <div class="project-preview react">
-              <div class="preview-window">
-                <div class="window-bar">
-                  <div class="window-dot"></div>
-                  <div class="window-dot"></div>
-                  <div class="window-dot"></div>
-                </div>
-                <div class="window-content">
-                  <div class="window-line"></div>
-                  <div class="window-line"></div>
-                  <div class="window-line"></div>
-                  <div class="window-line"></div>
-                </div>
-              </div>
-            </div>
-            <div class="project-body">
-              <div class="project-header">
-                <div class="project-title">React Frontend Applications</div>
-                <span class="project-status status-live">Coursework</span>
-              </div>
-              <p class="project-desc">
-                Interactive web applications built with React and modern
-                JavaScript. Reusable component architecture, dynamic UI
-                behavior, and API data integration. Spring 2026.
-              </p>
-              <div class="project-tech">
-                <span>const</span> tech = [<span>"React"</span>, <span>"JavaScript"</span>, <span>"API Integration"</span>]
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/AnastasisVL" target="_blank" class="project-link">
-                  View Code →
-                </a>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
     </section>
@@ -1269,10 +1233,40 @@
         document.getElementById('nav-cta').classList.toggle('open');
       }
 
-      // Form
+      // Form with email validation
+      const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+
+      function validateEmail(email) {
+        if (!email || email.length === 0) return 'Email is required';
+        if (!emailRegex.test(email)) return 'Please enter a valid email address';
+
+        const parts = email.split('@');
+        if (parts.length !== 2) return 'Email must have one @ symbol';
+        if (parts[0].length === 0 || parts[1].length === 0) return 'Email is missing username or domain';
+        if (parts[1].indexOf('.') === -1) return 'Email domain must have a TLD';
+
+        return null;
+      }
+
       document.getElementById('contact-form').addEventListener('submit', async (e) => {
         e.preventDefault();
-        const btn = e.target.querySelector('.form-submit');
+        const form = e.target;
+        const btn = form.querySelector('.form-submit');
+        const emailInput = form.querySelector('[name="email"]');
+        const email = emailInput.value.trim();
+
+        // Validate email
+        const emailError = validateEmail(email);
+        if (emailError) {
+          btn.textContent = emailError;
+          btn.style.background = '#ef4444';
+          setTimeout(() => {
+            btn.textContent = 'Send Message';
+            btn.style.background = 'var(--accent)';
+          }, 2000);
+          return;
+        }
+
         const orig = btn.textContent;
         btn.textContent = 'Sending...';
         btn.disabled = true;
@@ -1280,12 +1274,12 @@
         try {
           const res = await fetch('https://formspree.io/f/meerpznn', {
             method: 'POST',
-            body: new FormData(e.target),
+            body: new FormData(form),
             headers: { 'Accept': 'application/json' }
           });
           btn.textContent = res.ok ? 'Sent!' : 'Failed';
           btn.style.background = res.ok ? 'var(--accent)' : '#ef4444';
-          if (res.ok) e.target.reset();
+          if (res.ok) form.reset();
         } catch (err) {
           btn.textContent = 'Error';
           btn.style.background = '#ef4444';
