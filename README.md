@@ -1,21 +1,19 @@
 Anastasis Vlachatsis — Portfolio
 Personal developer portfolio built with vanilla HTML, CSS, and JavaScript. No frameworks, no dependencies — just a single file you can open in any browser or deploy anywhere in seconds.
-Live Demo →  http://anastasisvl.github.io/Landing_Page/
+Live  →  https://anastasis.is-a.dev/
 
 Features
 
 Typing animation in the hero section cycling through roles
-Floating terminal card displaying profile as JSON
 Scroll fade-in animations on every section
-Active nav highlight as you scroll through sections
 Project cards with live/wip status badges and tech stack tags
 Contact form with submit feedback
 Fully responsive — mobile hamburger menu included
-Dark theme with GitHub-inspired green accents, grid background, and glow effects
+Dark theme with ligh blue  accents, grid background.
 
 
 Sections
-SectionDescriptionHeroName, typing tagline, terminal card, CTA buttonsAboutBio, education card, stats grid, interests snippetSkillsTag list by category + icon gridProjectsCards for all 4 projects with mockup previewsContactLinks + contact form
+SectionDescriptionHeroName, typing tagline, terminal card, CTA buttonsAboutBio, education card, stats grid, interests snippetSkillsTag list by category + icon gridProjectsCards for all 3 projects with mockup previewsContactLinks + contact form
 
 
 
