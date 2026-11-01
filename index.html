@@ -3,13 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anastasis Vlachatsis — Developer</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%230f1115'/><text x='49' y='68' font-family='monospace' font-size='50' font-weight='bold' fill='%2303D4AA' text-anchor='middle'>AV</text></svg>">
+    <title>Anastasis Vlachatsis — Frontend Developer</title>
+    <meta
+      name="description"
+      content="Junior frontend developer building React and Next.js interfaces in TypeScript. BSc Computer Science, University of Thessaly."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%230f1115'/><text x='49' y='68' font-family='monospace' font-size='50' font-weight='bold' fill='%2303D4AA' text-anchor='middle'>AV</text></svg>"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Sora:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
     <style>
       :root {
@@ -138,6 +149,9 @@
         flex-direction: column;
         gap: 5px;
         cursor: pointer;
+        background: none;
+        border: none;
+        padding: 4px;
       }
 
       .hamburger span {
@@ -158,7 +172,6 @@
         overflow: hidden;
       }
 
-      /* Subtle grid pattern */
       .hero-grid {
         position: absolute;
         inset: 0;
@@ -166,11 +179,17 @@
           linear-gradient(rgba(0, 212, 170, 0.03) 1px, transparent 1px),
           linear-gradient(90deg, rgba(0, 212, 170, 0.03) 1px, transparent 1px);
         background-size: 40px 40px;
-        mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 0%, transparent 70%);
+        mask-image: radial-gradient(
+          ellipse 70% 60% at 50% 40%,
+          black 0%,
+          transparent 70%
+        );
       }
 
       .hero-inner {
         max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
         position: relative;
         z-index: 1;
       }
@@ -185,6 +204,7 @@
         margin-bottom: 1.25rem;
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 0.75rem;
       }
 
@@ -222,6 +242,7 @@
         flex-wrap: wrap;
         gap: 0.5rem;
         align-items: center;
+        justify-content: center;
       }
 
       .hero-stack span {
@@ -236,14 +257,15 @@
         font-size: 1rem;
         color: var(--text-secondary);
         line-height: 1.8;
-        margin-bottom: 2rem;
-        max-width: 560px;
+        margin: 0 auto 2rem;
+        max-width: 580px;
       }
 
       .hero-btns {
         display: flex;
         gap: 1rem;
         flex-wrap: wrap;
+        justify-content: center;
       }
 
       .btn-primary {
@@ -283,8 +305,14 @@
 
       /* Animation */
       @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       .animate {
@@ -292,10 +320,18 @@
         animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
 
-      .delay-1 { animation-delay: 0.1s; }
-      .delay-2 { animation-delay: 0.2s; }
-      .delay-3 { animation-delay: 0.3s; }
-      .delay-4 { animation-delay: 0.4s; }
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
+      .delay-4 {
+        animation-delay: 0.4s;
+      }
 
       /* ═══════════════════════════════════════════════════════════
          ABOUT
@@ -366,6 +402,13 @@
         font-size: 0.9rem;
       }
 
+      .edu-courses {
+        color: var(--text-muted);
+        font-size: 0.8rem;
+        margin-top: 0.6rem;
+        line-height: 1.6;
+      }
+
       .edu-date {
         font-family: var(--font-mono);
         font-size: 0.7rem;
@@ -422,7 +465,7 @@
 
       .skills-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         gap: 1.25rem;
       }
 
@@ -493,6 +536,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1.75rem;
+        padding-bottom: 1.5rem;
       }
 
       .project-card {
@@ -500,6 +544,8 @@
         border: 1px solid var(--border);
         overflow: hidden;
         transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        display: flex;
+        flex-direction: column;
       }
 
       .project-card:hover {
@@ -530,13 +576,25 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(to bottom, transparent 60%, var(--bg-elevated));
+        background: linear-gradient(
+          to bottom,
+          transparent 60%,
+          var(--bg-elevated)
+        );
       }
 
-      .project-preview.barber { background: linear-gradient(135deg, #0d1117 0%, #161b22 100%); }
-      .project-preview.noted { background: linear-gradient(135deg, #0f0f12 0%, #18181f 100%); }
-      .project-preview.wp { background: linear-gradient(135deg, #0e0e10 0%, #151518 100%); }
-      .project-preview.react { background: linear-gradient(135deg, #0c0d10 0%, #141418 100%); }
+      .project-preview.hermes {
+        background: linear-gradient(135deg, #0a1114 0%, #10191d 100%);
+      }
+      .project-preview.barber {
+        background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+      }
+      .project-preview.noted {
+        background: linear-gradient(135deg, #0f0f12 0%, #18181f 100%);
+      }
+      .project-preview.wp {
+        background: linear-gradient(135deg, #0e0e10 0%, #151518 100%);
+      }
 
       .preview-window {
         width: 85%;
@@ -547,6 +605,25 @@
         overflow: hidden;
         position: relative;
         z-index: 1;
+      }
+
+      /* Project image fills the window box; if the file is missing the img is removed
+         and the placeholder window bar/lines show instead */
+      .preview-window img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        padding: 10px 14px;
+        object-fit: contain;
+        background: #0a1114;
+        z-index: 2;
+      }
+
+      .preview-window img.cover {
+        padding: 0;
+        object-fit: cover;
+        object-position: center 47%;
       }
 
       .window-bar {
@@ -564,9 +641,15 @@
         border-radius: 50%;
       }
 
-      .window-dot:nth-child(1) { background: #ff5f57; }
-      .window-dot:nth-child(2) { background: #ffbd2e; }
-      .window-dot:nth-child(3) { background: #5ac54f; }
+      .window-dot:nth-child(1) {
+        background: #ff5f57;
+      }
+      .window-dot:nth-child(2) {
+        background: #ffbd2e;
+      }
+      .window-dot:nth-child(3) {
+        background: #5ac54f;
+      }
 
       .window-content {
         padding: 8px;
@@ -580,13 +663,28 @@
         border-radius: 1.5px;
       }
 
-      .window-line:nth-child(1) { width: 70%; background: var(--accent-dim); }
-      .window-line:nth-child(2) { width: 50%; background: var(--border); }
-      .window-line:nth-child(3) { width: 60%; background: var(--border); }
-      .window-line:nth-child(4) { width: 40%; background: var(--border); }
+      .window-line:nth-child(1) {
+        width: 70%;
+        background: var(--accent-dim);
+      }
+      .window-line:nth-child(2) {
+        width: 50%;
+        background: var(--border);
+      }
+      .window-line:nth-child(3) {
+        width: 60%;
+        background: var(--border);
+      }
+      .window-line:nth-child(4) {
+        width: 40%;
+        background: var(--border);
+      }
 
       .project-body {
         padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
       }
 
       .project-header {
@@ -624,12 +722,57 @@
         color: var(--code-orange);
         border: 1px solid var(--code-orange);
       }
+      .status-pending {
+        background: rgba(139, 233, 253, 0.1);
+        color: var(--code-blue);
+        border: 1px solid var(--code-blue);
+      }
+
+      .project-notice {
+        background: transparent;
+        border: none;
+        padding: 0;
+        font-family: inherit;
+        cursor: pointer;
+      }
+
+      .project-notice:hover {
+        color: var(--accent);
+      }
+
+      .pending-link {
+        color: var(--text-muted);
+        font-size: 0.75rem;
+        cursor: default;
+      }
 
       .project-desc {
         font-size: 0.85rem;
         color: var(--text-secondary);
         line-height: 1.7;
         margin-bottom: 0.9rem;
+      }
+
+      .project-points {
+        list-style: none;
+        margin-bottom: 0.9rem;
+      }
+
+      .project-points li {
+        font-size: 0.82rem;
+        color: var(--text-secondary);
+        line-height: 1.65;
+        padding-left: 1.1rem;
+        position: relative;
+        margin-bottom: 0.3rem;
+      }
+
+      .project-points li::before {
+        content: "›";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: 700;
       }
 
       .project-tech {
@@ -648,7 +791,8 @@
 
       .project-links {
         display: flex;
-        gap: 0.75rem;
+        gap: 1.25rem;
+        margin-top: auto;
       }
 
       .project-link {
@@ -664,14 +808,6 @@
 
       .project-link:hover {
         color: var(--accent);
-      }
-
-      .project-link svg {
-        transition: transform 0.2s;
-      }
-
-      .project-link:hover svg {
-        transform: translateX(3px);
       }
 
       /* ═══════════════════════════════════════════════════════════
@@ -812,6 +948,42 @@
       footer span {
         color: var(--accent);
       }
+      .contact-link i {
+        font-size: 1.2rem;
+        width: 20px;
+        text-align: center;
+        color: var(--text-secondary);
+        transition: color 0.25s ease;
+      }
+
+      .contact-link:hover i {
+        color: var(--accent);
+      }
+      /* Project notification toast */
+      .project-toast {
+        position: fixed;
+        bottom: 2rem;
+        left: 50%;
+        transform: translate(-50%, 20px);
+        background: var(--bg-elevated);
+        color: var(--text-primary);
+        border: 1px solid var(--accent);
+        padding: 1rem 1.5rem;
+        font-size: 0.85rem;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        text-align: center;
+        width: max-content;
+        max-width: calc(100% - 2rem);
+      }
+
+      .project-toast.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, 0);
+      }
 
       /* ═══════════════════════════════════════════════════════════
          RESPONSIVE
@@ -891,10 +1063,14 @@
 
         .nav-cta.open {
           display: block;
+          position: fixed;
+          top: 200px;
+          left: 1.5rem;
+          right: 1.5rem;
           text-align: center;
-          margin-top: 0.5rem;
         }
       }
+
       /* ═══════════════════════════════════════════════════════════
          LOADER
       ═══════════════════════════════════════════════════════════ */
@@ -906,35 +1082,34 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: opacity 0.6s ease, visibility 0.6s;
+        transition:
+          opacity 0.6s ease,
+          visibility 0.6s;
       }
 
       .dots-container {
         display: flex;
-        gap: 0.5rem; /* Space between dots */
+        gap: 0.5rem;
       }
 
       .dot {
         width: 12px;
         height: 12px;
         border-radius: 50%;
-        background-color: #03D4AA;
-        /* Matches the Framer Motion duration and easing */
+        background-color: #03d4aa;
         animation: pulse-dot 1s ease-in-out infinite;
       }
 
-      /* Apply the Framer Motion delays */
       .dot:nth-child(2) {
         animation-delay: 0.3s;
       }
-
       .dot:nth-child(3) {
         animation-delay: 0.6s;
       }
 
-      /* The exact animation states from your React code */
       @keyframes pulse-dot {
-        0%, 100% {
+        0%,
+        100% {
           transform: scale(1);
           opacity: 0.5;
         }
@@ -953,6 +1128,7 @@
         <div class="dot"></div>
       </div>
     </div>
+
     <!-- NAV -->
     <nav>
       <a href="#home" class="nav-logo"><span>&lt;</span>AV<span>/&gt;</span></a>
@@ -962,10 +1138,15 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="#contact" class="nav-cta">Let's Talk</a>
-      <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <a href="#contact" class="nav-cta" id="nav-cta">Let's Talk</a>
+      <button
+        class="hamburger"
+        id="hamburger"
+        onclick="toggleMenu()"
+        aria-label="Toggle menu"
+      >
         <span></span><span></span><span></span>
-      </div>
+      </button>
     </nav>
 
     <!-- HERO -->
@@ -977,19 +1158,20 @@
           Anastasis <span class="accent">Vlachatsis</span>
         </h1>
         <p class="hero-role animate delay-2">
-          Final-year CS student building real-world web applications
+          Junior frontend developer building React &amp; Next.js interfaces
         </p>
         <div class="hero-stack animate delay-2">
-          <span>JavaScript</span>
-          <span class="pipe">|</span>
           <span>React</span>
           <span class="pipe">|</span>
-          <span>PHP</span>
+          <span>Next.js</span>
+          <span class="pipe">|</span>
+          <span>TypeScript</span>
         </div>
         <p class="hero-desc animate delay-3">
-          Creating intuitive digital experiences with modern JavaScript.
-          Currently focused on Progressive Web Apps,
-          and expanding into backend development. 
+          Computer Science graduate who builds interfaces on reusable components
+          and a consistent design system, connects them to REST APIs and a
+          headless CMS, and ships them to production. Looking for a frontend
+          role working on data-driven dashboards and enterprise interfaces.
         </p>
         <div class="hero-btns animate delay-4">
           <a href="#projects" class="btn-primary">View Projects →</a>
@@ -1005,26 +1187,34 @@
           <div class="about-text">
             <div class="section-label animate">About</div>
             <h2 class="section-title animate delay-1">
-              Building applications that people actually use
+              Frontend interfaces that ship and get used
             </h2>
             <p class="animate delay-2">
-              Final-year Computer Science student at the University of Thessaly
-              with hands-on experience building web applications from the ground up —
-              including a live PWA deployed for a real client.
+              Computer Science graduate (BSc, June 2026) from the University of
+              Thessaly with two live products behind me: a mobile-first PWA used
+              daily by a professional barber, and the official website of a
+              university Cybathlon robotics team.
             </p>
             <p class="animate delay-3">
-              I work with JavaScript and React for frontend development, PHP for
-              backend services, and have built custom WordPress plugins. I care about
-              writing clean, maintainable code and turning ideas into working software.
+              I build with React and Next.js in TypeScript, integrate with REST
+              APIs and a headless CMS (Sanity), and structure UIs around
+              reusable components, skeleton loading states and responsive
+              layouts. I also have backend experience in PHP and WordPress
+              plugin development.
             </p>
             <p class="animate delay-4">
-              Always learning new technologies and improving the way I write code,
-              focused on practical and efficient solutions.
+              I care about clean, maintainable code that other developers can
+              pick up, which is why I document my codebases and keep components
+              consistent.
             </p>
             <div class="edu-card animate delay-4">
               <div class="edu-degree">BSc Computer Science</div>
-              <div class="edu-school">University of Thessaly, Larissa</div>
-              <div class="edu-date">Graduating June 2026</div>
+              <div class="edu-school">University of Thessaly</div>
+              <div class="edu-courses">
+                Web Development · REST APIs and Web Services · Software
+                Engineering · Database Systems
+              </div>
+              <div class="edu-date">Graduated June 2026</div>
             </div>
           </div>
 
@@ -1040,11 +1230,11 @@
                 <span class="stat-label">Projects</span>
               </div>
               <div class="stat-card animate delay-3">
-                <span class="stat-num">1</span>
-                <span class="stat-label">Live App</span>
+                <span class="stat-num">2</span>
+                <span class="stat-label">Live Products</span>
               </div>
               <div class="stat-card animate delay-4">
-                <span class="stat-num">7+</span>
+                <span class="stat-num">10+</span>
                 <span class="stat-label">Technologies</span>
               </div>
             </div>
@@ -1063,33 +1253,56 @@
 
         <div class="skills-grid">
           <div class="skill-group animate delay-2">
-            <div class="skill-title">Languages</div>
+            <div class="skill-title">Frontend</div>
             <div class="skill-list">
+              <span class="skill-tag primary">React</span>
+              <span class="skill-tag primary">Next.js (App Router)</span>
+              <span class="skill-tag primary">TypeScript</span>
               <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">PHP</span>
-              <span class="skill-tag">HTML5</span>
-              <span class="skill-tag">CSS3</span>
-              <span class="skill-tag">SQL</span>
-              <span class="skill-tag">C</span>
+              <span class="skill-tag">HTML/CSS</span>
+              <span class="skill-tag">Tailwind CSS</span>
+              <span class="skill-tag">Framer Motion</span>
             </div>
           </div>
 
           <div class="skill-group animate delay-2">
-            <div class="skill-title">Frontend</div>
+            <div class="skill-title">Data &amp; Integration</div>
             <div class="skill-list">
-              <span class="skill-tag primary">React</span>
-              <span class="skill-tag">HTML</span>
-              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">JSON &amp; XML</span>
+              <span class="skill-tag">Sanity CMS (headless)</span>
+              <span class="skill-tag">PWA</span>
+              <span class="skill-tag">Service Workers</span>
             </div>
           </div>
 
           <div class="skill-group animate delay-3">
-            <div class="skill-title">Backend</div>
+            <div class="skill-title">Component Work</div>
+            <div class="skill-list">
+              <span class="skill-tag">Reusable components</span>
+              <span class="skill-tag">Design systems</span>
+              <span class="skill-tag">Skeleton loading states</span>
+              <span class="skill-tag">Responsive layouts</span>
+            </div>
+          </div>
+
+          <div class="skill-group animate delay-3">
+            <div class="skill-title">Backend &amp; Databases</div>
             <div class="skill-list">
               <span class="skill-tag">PHP</span>
-              <span class="skill-tag">WordPress</span>
-              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">WordPress plugins</span>
+              <span class="skill-tag">SQL</span>
               <span class="skill-tag">MySQL</span>
+            </div>
+          </div>
+
+          <div class="skill-group animate delay-4">
+            <div class="skill-title">Tools &amp; Other</div>
+            <div class="skill-list">
+              <span class="skill-tag">Git / GitHub</span>
+              <span class="skill-tag">Vercel</span>
+              <span class="skill-tag">Linux (basic)</span>
+              <span class="skill-tag">C</span>
             </div>
           </div>
         </div>
@@ -1105,10 +1318,15 @@
         </div>
 
         <div class="projects-grid">
-          <!-- Barber PWA -->
+          <!-- HERMES Team Website -->
           <div class="project-card animate delay-2">
-            <div class="project-preview barber">
+            <div class="project-preview hermes">
               <div class="preview-window">
+                <img
+                  src="images/navbar-logo.webp"
+                  alt="HERMES Team logo"
+                  onerror="this.remove()"
+                />
                 <div class="window-bar">
                   <div class="window-dot"></div>
                   <div class="window-dot"></div>
@@ -1124,20 +1342,93 @@
             </div>
             <div class="project-body">
               <div class="project-header">
-                <div class="project-title">Barber Booking & Management</div>
+                <div class="project-title">HERMES Team Website</div>
                 <span class="project-status status-live">Live</span>
               </div>
               <p class="project-desc">
-                Mobile-first scheduling PWA for a professional barber.
-                Features offline support via Service Workers, custom vanilla JS
-                calendar, appointment booking, and client management.
+                Official website of HERMES Team, a University of Thessaly
+                robotics group developing a lower-limb exoskeleton for the
+                Cybathlon championship.
               </p>
+              <ul class="project-points">
+                <li>
+                  Reusable components (Timeline, Gallery, SponsorCard, skeleton
+                  loaders) and a consistent design system across all pages
+                </li>
+                <li>Sanity as headless CMS, deployed to Vercel</li>
+                <li>
+                  Grew from a single-page HTML prototype into a full TypeScript
+                  app, with documentation for new developers
+                </li>
+              </ul>
               <div class="project-tech">
-                <span>const</span> tech = [<span>"JavaScript"</span>, <span>"PWA"</span>, <span>"Service Workers"</span>, <span>"Vercel"</span>]
+                <span>const</span> tech = [<span>"Next.js 14"</span>,
+                <span>"TypeScript"</span>, <span>"Tailwind"</span>,
+                <span>"Framer Motion"</span>, <span>"Sanity"</span>]
               </div>
               <div class="project-links">
-                <a href="https://github.com/BarberShop-Notes-App/papounidis-barbershop-notes" target="_blank" class="project-link">
-                  View Code →
+                <a
+                  href="https://hermesteam.eu"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-link"
+                >
+                  Visit Site →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Barber PWA -->
+          <div class="project-card animate delay-3">
+            <div class="project-preview barber">
+              <div class="preview-window">
+                <img
+                  class="cover"
+                  src="images/background.JPG"
+                  alt="Papounidis Hair Studio"
+                  onerror="this.remove()"
+                />
+                <div class="window-bar">
+                  <div class="window-dot"></div>
+                  <div class="window-dot"></div>
+                  <div class="window-dot"></div>
+                </div>
+                <div class="window-content">
+                  <div class="window-line"></div>
+                  <div class="window-line"></div>
+                  <div class="window-line"></div>
+                  <div class="window-line"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-header">
+                <div class="project-title">Barber Booking &amp; Management</div>
+                <span class="project-status status-live">Live</span>
+              </div>
+              <p class="project-desc">
+                Mobile-first scheduling app used by a professional barber to
+                manage appointments and client records, with a custom vanilla JS
+                calendar.
+              </p>
+              <ul class="project-points">
+                <li>PWA with offline support through Service Workers</li>
+                <li>Deployed on Vercel and used in daily operation</li>
+              </ul>
+              <div class="project-tech">
+                <span>const</span> tech = [<span>"JavaScript"</span>,
+                <span>"PWA"</span>, <span>"Service Workers"</span>,
+                <span>"Vercel"</span>]
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://papounidis-barbershop-notes.vercel.app/"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-link"
+                >
+                  View The Notebook →
                 </a>
               </div>
             </div>
@@ -1163,20 +1454,25 @@
             <div class="project-body">
               <div class="project-header">
                 <div class="project-title">Noted — Academic Notes Platform</div>
-                <span class="project-status status-wip">In Progress</span>
+                <span class="project-status status-wip">WIP</span>
               </div>
               <p class="project-desc">
-                Web platform for university students to create and organize
-                academic notes. Implementing OAuth authentication through
-                university accounts and a React-based frontend.
+                Web platform for university students to create and organise
+                academic notes, with OAuth login through university accounts.
               </p>
               <div class="project-tech">
-                <span>const</span> tech = [<span>"React"</span>, <span>"OAuth"</span>, <span>"State Management"</span>]
+                <span>const</span> tech = [<span>"JavaScript"</span>,
+                <span>"React"</span>, <span>"OAuth"</span>]
               </div>
               <div class="project-links">
-                <a href="https://github.com/AnastasisVL" target="_blank" class="project-link">
-                  View Code →
-                </a>
+                <button
+                  type="button"
+                  class="project-link project-notice"
+                  data-message="Easy there! The developer is still cooking. 👨‍🍳"
+                  aria-label="Noted is currently under construction"
+                >
+                  Under Construction 🚧
+                </button>
               </div>
             </div>
           </div>
@@ -1200,26 +1496,37 @@
             </div>
             <div class="project-body">
               <div class="project-header">
-                <div class="project-title">WordPress Scientific Paper Plugin</div>
-                <span class="project-status status-live">Thesis</span>
+                <div class="project-title">
+                  WordPress Scientific Paper Plugin
+                </div>
+                <span class="project-status status-live"
+                  >Publication Pending</span
+                >
               </div>
               <p class="project-desc">
-                Thesis project — custom WordPress plugin for structured
-                registration and management of scientific publications.
-                Custom post types, REST API endpoints, and research filtering.
+                Thesis project (2024–2025): a WordPress plugin for organizing
+                scientific publications, featuring structured metadata
+                management and BibTeX/CSV import and export.
               </p>
+              <ul class="project-points">
+                <li>Custom post types and REST API endpoints</li>
+                <li>
+                  Built to WordPress plugin best practices and security
+                  guidelines
+                </li>
+              </ul>
               <div class="project-tech">
-                <span>const</span> tech = [<span>"PHP"</span>, <span>"WordPress"</span>, <span>"REST API"</span>, <span>"MySQL"</span>]
+                <span>const</span> tech = [<span>"PHP"</span>,
+                <span>"WordPress"</span>, <span>"REST API"</span>,
+                <span>"MySQL"</span>]
               </div>
               <div class="project-links">
-                <a href="https://github.com/AnastasisVL" target="_blank" class="project-link">
-                  View Code →
-                </a>
+                <span class="project-link pending-link">
+                  ⏳ Awaiting University Repository Publication
+                </span>
               </div>
             </div>
           </div>
-
-          
         </div>
       </div>
     </section>
@@ -1231,15 +1538,23 @@
           <div class="section-label animate">Contact</div>
           <h2 class="animate delay-1">Let's work together</h2>
           <p class="animate delay-2">
-            Open to junior developer roles, internships, and freelance projects.
-            Whether you have an opportunity or just want to connect — always happy to hear from you.
+            I'm looking for a junior frontend role, ideally on dashboards and
+            enterprise interfaces. Internships and freelance projects are
+            welcome too. Whether you have an opportunity or just want to
+            connect, I'd love to hear from you.
           </p>
           <div class="contact-links animate delay-3">
             <a href="mailto:anastasisvl2@gmail.com" class="contact-link">
               <span>✉</span> anastasisvl2@gmail.com
             </a>
-            <a href="https://github.com/AnastasisVL" target="_blank" class="contact-link">
-              <span>⌘</span> github.com/AnastasisVL
+            <a
+              href="https://github.com/AnastasisVL"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link"
+            >
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              github.com/AnastasisVL
             </a>
           </div>
         </div>
@@ -1247,17 +1562,34 @@
         <form class="contact-form animate delay-4" id="contact-form">
           <div class="form-group">
             <label for="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Your name" required />
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Your name"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="your@email.com" required />
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="your@email.com"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Your message..."
+              required
+            ></textarea>
           </div>
-          <input type="text" name="_gotcha" style="display:none" />
+          <input type="text" name="_gotcha" style="display: none" />
           <button class="form-submit" type="submit">Send Message</button>
         </form>
       </div>
@@ -1265,110 +1597,156 @@
 
     <!-- FOOTER -->
     <footer>
-      <p><span>&lt;/&gt;</span> Built with care · © 2026 Anastasis Vlachatsis</p>
+      <p>
+        <span>&lt;/&gt;</span> Built with care · © 2026 Anastasis Vlachatsis
+      </p>
     </footer>
 
     <script>
       // Loader Logic
       document.addEventListener("DOMContentLoaded", () => {
-        const loader = document.getElementById('app-loader');
-        
-        window.addEventListener('load', () => {
-          // Adjust this 1500 value if you want the loader to stay longer/shorter
-          setTimeout(() => {
-            loader.style.opacity = '0';
-            loader.style.visibility = 'hidden';
-            setTimeout(() => loader.remove(), 600);
-          }, 1500); 
-        });
-      });
-      // Scroll animations
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('animate');
-            observer.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.1 });
+        const loader = document.getElementById("app-loader");
 
-      document.querySelectorAll('.section-label, .section-title, .about-text, .about-stats, .skills-header, .skill-group, .project-card, .contact-text, .contact-form').forEach(el => {
-        observer.observe(el);
+        window.addEventListener("load", () => {
+          setTimeout(() => {
+            loader.style.opacity = "0";
+            loader.style.visibility = "hidden";
+            setTimeout(() => loader.remove(), 600);
+          }, 1500);
+        });
       });
+
+      // Scroll animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("animate");
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document
+        .querySelectorAll(
+          ".section-label, .section-title, .about-text, .about-stats, .skills-header, .skill-group, .project-card, .contact-text, .contact-form",
+        )
+        .forEach((el) => {
+          observer.observe(el);
+        });
 
       // Mobile menu
       function toggleMenu() {
-        document.getElementById('nav-links').classList.toggle('open');
-        document.getElementById('nav-cta').classList.toggle('open');
+        document.getElementById("nav-links").classList.toggle("open");
+        document.getElementById("nav-cta").classList.toggle("open");
       }
 
+      document.querySelectorAll(".nav-links a, .nav-cta").forEach((a) => {
+        a.addEventListener("click", () => {
+          document.getElementById("nav-links").classList.remove("open");
+          document.getElementById("nav-cta").classList.remove("open");
+        });
+      });
+
       // Form with email validation
-      const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+      const emailRegex =
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
 
       function validateEmail(email) {
-        if (!email || email.length === 0) return 'Email is required';
-        if (!emailRegex.test(email)) return 'Please enter a valid email address';
+        if (!email || email.length === 0) return "Email is required";
+        if (!emailRegex.test(email))
+          return "Please enter a valid email address";
 
-        const parts = email.split('@');
-        if (parts.length !== 2) return 'Email must have one @ symbol';
-        if (parts[0].length === 0 || parts[1].length === 0) return 'Email is missing username or domain';
-        if (parts[1].indexOf('.') === -1) return 'Email domain must have a TLD';
+        const parts = email.split("@");
+        if (parts.length !== 2) return "Email must have one @ symbol";
+        if (parts[0].length === 0 || parts[1].length === 0)
+          return "Email is missing username or domain";
+        if (parts[1].indexOf(".") === -1) return "Email domain must have a TLD";
 
         return null;
       }
 
-      document.getElementById('contact-form').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const btn = form.querySelector('.form-submit');
-        const emailInput = form.querySelector('[name="email"]');
-        const email = emailInput.value.trim();
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const form = e.target;
+          const btn = form.querySelector(".form-submit");
+          const emailInput = form.querySelector('[name="email"]');
+          const email = emailInput.value.trim();
 
-        // Validate email
-        const emailError = validateEmail(email);
-        if (emailError) {
-          btn.textContent = emailError;
-          btn.style.background = '#ef4444';
+          const emailError = validateEmail(email);
+          if (emailError) {
+            btn.textContent = emailError;
+            btn.style.background = "#ef4444";
+            setTimeout(() => {
+              btn.textContent = "Send Message";
+              btn.style.background = "var(--accent)";
+            }, 2000);
+            return;
+          }
+
+          const orig = btn.textContent;
+          btn.textContent = "Sending...";
+          btn.disabled = true;
+
+          try {
+            const res = await fetch("https://formspree.io/f/meerpznn", {
+              method: "POST",
+              body: new FormData(form),
+              headers: { Accept: "application/json" },
+            });
+            btn.textContent = res.ok ? "Sent!" : "Failed";
+            btn.style.background = res.ok ? "var(--accent)" : "#ef4444";
+            if (res.ok) form.reset();
+          } catch (err) {
+            btn.textContent = "Error";
+            btn.style.background = "#ef4444";
+          }
+
           setTimeout(() => {
-            btn.textContent = 'Send Message';
-            btn.style.background = 'var(--accent)';
-          }, 2000);
-          return;
-        }
-
-        const orig = btn.textContent;
-        btn.textContent = 'Sending...';
-        btn.disabled = true;
-
-        try {
-          const res = await fetch('https://formspree.io/f/meerpznn', {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-          });
-          btn.textContent = res.ok ? 'Sent!' : 'Failed';
-          btn.style.background = res.ok ? 'var(--accent)' : '#ef4444';
-          if (res.ok) form.reset();
-        } catch (err) {
-          btn.textContent = 'Error';
-          btn.style.background = '#ef4444';
-        }
-
-        setTimeout(() => {
-          btn.textContent = orig;
-          btn.style.background = 'var(--accent)';
-          btn.disabled = false;
-        }, 2500);
-      });
+            btn.textContent = orig;
+            btn.style.background = "var(--accent)";
+            btn.disabled = false;
+          }, 2500);
+        });
 
       // Active nav
-      window.addEventListener('scroll', () => {
-        let current = '';
-        document.querySelectorAll('section[id]').forEach(s => {
+      window.addEventListener("scroll", () => {
+        let current = "";
+        document.querySelectorAll("section[id]").forEach((s) => {
           if (window.scrollY >= s.offsetTop - 150) current = s.id;
         });
-        document.querySelectorAll('.nav-links a').forEach(a => {
-          a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : 'var(--text-secondary)';
+        document.querySelectorAll(".nav-links a").forEach((a) => {
+          a.style.color =
+            a.getAttribute("href") === "#" + current
+              ? "var(--accent)"
+              : "var(--text-secondary)";
+        });
+      });
+      // Project notifications
+      const projectToast = document.createElement("div");
+
+      projectToast.className = "project-toast";
+      projectToast.setAttribute("role", "status");
+      projectToast.setAttribute("aria-live", "polite");
+
+      document.body.appendChild(projectToast);
+
+      let toastTimeout;
+
+      document.querySelectorAll(".project-notice").forEach((button) => {
+        button.addEventListener("click", () => {
+          projectToast.textContent = button.dataset.message;
+          projectToast.classList.add("show");
+
+          clearTimeout(toastTimeout);
+
+          toastTimeout = setTimeout(() => {
+            projectToast.classList.remove("show");
+          }, 3000);
         });
       });
     </script>
